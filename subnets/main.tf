@@ -9,11 +9,11 @@ resource "aws_subnet" "main" {
 }
 
 resource "aws_route_table" "main" {
-for.each = var.subnets
-vpc_id = var.vpc_id
+  for.each = var.subnets
+  vpc_id = var.vpc_id
 
-tags = {
-Name = each.key
+  tags = {
+    Name = each.key
 }
 }
 
